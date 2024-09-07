@@ -1,0 +1,5 @@
+[run]
+omit =
+    pySOT/examples/*
+    pySOT/tests/*
+    pySOT/gui.py
