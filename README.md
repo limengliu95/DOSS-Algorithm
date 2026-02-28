@@ -1,20 +1,69 @@
-# README
+# DOSS: A Python Solver for Box-Constrained Black-Box Optimization
 
 ## Authors
-- Limeng Liu
-- Muming Yang
-- Christine A. Shoemaker
-- Tingting Xie
 
-## Introduction
-This Python software is designed to solve box-constrained black-box optimization problems of the form:
+-   **Limeng Liu**
+-   **Muming Yang**
+-   **Christine A. Shoemaker**
+-   **Tingting Xie**
+
+------------------------------------------------------------------------
+
+## Overview
+
+This repository provides a **Python implementation of DOSS**, a
+surrogate-based algorithm for solving **box-constrained black-box
+optimization problems**. The software accompanies the research article:
+
+> Liu, L., Yang, M., Shoemaker, C. A., & Xie, T. (2024).\
+> *Solving higher dimensional expensive black box global optimization
+> problems using sparse directional search on surrogates.*\
+> Mathematical Programming Computation, 16, 665--693.\
+> https://doi.org/10.1007/s12532-024-00267-7
+
+The package enables researchers to reproduce all computational
+experiments reported in the paper and compare DOSS against several
+state-of-the-art optimization algorithms.
+
+------------------------------------------------------------------------
+
+## Problem Formulation
+
+The software solves optimization problems of the form:
 
 $$(P) \quad \min \ f(x) $$
 
 $$\text{subject to } x \in D$$
 
-where $f(x)$ is a continuous function over a given box set $D = [l, r]^d$.
-The software package includes the proposed **DOSS** algorithm and three compared algorithms: **RBFOpt**, **TuRBO**, and **DYCORS**.
+where:
+
+-   f(x) is a continuous black-box objective function,
+-   D = \[l,r\]\^d is a bounded box domain,
+-   gradients are unavailable or expensive to compute.
+
+Applications include:
+
+-   simulation-based optimization
+-   engineering design
+-   robotics control
+-   expensive scientific computation
+
+------------------------------------------------------------------------
+
+## Implemented Algorithms
+
+### Proposed Method
+
+-   **DOSS** --- Directional Optimization Search with Surrogate (proposed in
+    the paper)
+
+### Benchmark Algorithms
+
+-   **RBFOpt** --- Radial basis function optimization
+-   **TuRBO** --- Trust-region Bayesian optimization
+-   **DYCORS** --- Dynamic coordinate search (pySOT)
+
+------------------------------------------------------------------------
 
 ## Software Structure
 The software contains the following folders:
@@ -162,3 +211,18 @@ The software contains the following folders:
 5. **Main Functions**: (`test_rbf.py`, `test_turbo.py`, `test_rbfopt.py`)
    - Main scripts to run DOSS, TuRBO, and RBFOpt algorithms.
 
+------------------------------------------------------------------------
+
+## Citation
+
+If you use this software, please cite:
+
+@article{liu2024solving, title = {Solving higher dimensional expensive
+black box global optimization problems using sparse directional search
+on surrogates}, author = {Liu, Limeng and Yang, Muming and Shoemaker,
+Christine A. and Xie, Tingting}, journal = {Mathematical Programming
+Computation}, year = {2024}, volume = {16}, pages = {665--693}, doi =
+{10.1007/s12532-024-00267-7}, url =
+{https://doi.org/10.1007/s12532-024-00267-7} }
+
+------------------------------------------------------------------------
